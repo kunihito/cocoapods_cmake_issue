@@ -9,9 +9,10 @@ project(cocoapods_cmake_issue
 add_executable(cocoapods_cmake_issue
         main.swift
 )
+file(COPY Podfile DESTINATION ./)
 
 # copying the Podfile to the projects root-directory
 execute_process(
         COMMAND
-        ${CMAKE_COMMAND} -E copy Podfile ${CMAKE_BINARY_DIR}/Podfile
+        ${CMAKE_COMMAND} -E copy Podfile ${CMAKE_BINARY_DIR}/../Podfile
 )
